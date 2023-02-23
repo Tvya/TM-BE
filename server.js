@@ -485,20 +485,25 @@ app.post("/ForgetPassword", async(req, res) => {
         }
         else{
             return res.status(200).json((updatePassword.rows[0]))
+        }     
+        
         }
-       
-           
+        catch(err){
+            res.json(err)
+            console.error(err.message)
+        }
+    });
+
+
+app.get("/", async(req, res) => {
+    try{
         
-        
+        res.send("hello")
     }
     catch(err){
-        res.json(err)
         console.error(err.message)
     }
 });
-
-
-
 
 
 
