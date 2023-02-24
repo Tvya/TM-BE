@@ -592,4 +592,4 @@ function sendOrderEmail(order, recipient_email, cname, shopName, shopNumber, col
 
 
 
-app.listen(PORT, ()=>{console.log(`Server started on ${PORT}`)})
+app.listen(PORT, {host: "0.0.0.0"}, ()=>{console.log(`Server started on ${PORT}`)})
