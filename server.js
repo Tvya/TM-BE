@@ -14,6 +14,7 @@ const PORT = process.env.PORT
 //Connect DB
 db.on('connect', (client) => {
   client.query("SET search_path TO 'TailorMade' ");
+  console.log('Connected to DB');
 });
 
 const corsConfig = {
@@ -24,8 +25,7 @@ const corsConfig = {
 //MIDDLEWARE
 app.use(cors(corsConfig))
 app.use(express.json()) //to access the req.body
-app.use(express.json({ limit: '50mb' }));
-app.use(express.urlencoded({ limit: '50mb', extended: true}));
+app.use(express.urlencoded({ extended: true}));
 
 
 //ROUTES
